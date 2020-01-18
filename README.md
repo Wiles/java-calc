@@ -25,7 +25,3 @@ Example use:
 3*7 = 21
 5(2+3) = 25
 ```
-
-## coverage
-
-JaCoCo overage site output to `<project_dir>/calc/target/site/jacoco/index.html`
