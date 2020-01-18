@@ -43,6 +43,5 @@ jobs:
       # run tests!
       - run: mvn integration-test
 
-      - store_artifacts:
-          path:  ~/repo/calc/target
-          
+      - store_test_results:
+          path:  ~/repo/calc/target/jacoco.exec
