@@ -6,7 +6,7 @@ To refamiliarize myself with Java tools I decided to port my old [C++ infix nota
 
 ## prerequisites
 
-* Java 13
+* Java 11
 * Maven 3
 
 ## build
