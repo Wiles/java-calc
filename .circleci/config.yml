@@ -44,4 +44,4 @@ jobs:
       - run: mvn integration-test
 
       - store_test_results:
-          path:  ~/repo/calc/target/jacoco.exec
+          path:  ~/repo/calc/target/calc/target/site/jacoco
