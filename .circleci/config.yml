@@ -44,4 +44,5 @@ jobs:
       - run: mvn integration-test
 
       - store_test_results:
-          path:  ~/repo/calc/target/calc/target/site
+          path:  ~/repo/calc/target/site
+
