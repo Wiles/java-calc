@@ -48,9 +48,9 @@ jobs:
       - run: mvn integration-test
 
       - store_test_results:
-          path:  ~/repo/calc/target/site
+          path:  target/site
 
 
       - codecov/upload:
-          file: ~/repo/calc/target/site/jacoco/jacoco.xml
+          file: target/site/jacoco/jacoco.xml
 
