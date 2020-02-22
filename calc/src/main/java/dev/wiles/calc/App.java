@@ -10,7 +10,7 @@ public class App {
             for (final String arg : args) {
                 final String expression = arg.replaceAll("\\s", "");
                 final BigDecimal solution = calculator.solve(expression);
-                System.out.println(expression + " = " + solution);
+                System.out.println(expression + " = " + solution.stripTrailingZeros().toPlainString());
             }
         } catch (final Exception e) {
             e.printStackTrace();

@@ -3,8 +3,6 @@ package dev.wiles.calc;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import java.math.BigDecimal;
-
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -31,7 +29,7 @@ public class CalcTest {
             "12/3-1=3",
             "12/4-2=1",
             "1-12/3=-3",
-            "0.5*2=1.0",
+            "0.5*2=1",
             "5*-2=-10",
             "10/5/2=1",
             "5(2)=10",
@@ -39,13 +37,12 @@ public class CalcTest {
             "(7*5)/5=7",
             "7*(5/5)=7",
             "7*5/5=7",
-            ".5*4=2.0" }, delimiter = '=')
+            ".5*4=2" }, delimiter = '=')
 
     public void baseTest(final String expression, final String solution) throws ParenthesisException, FormatException {
-        final BigDecimal expected = new BigDecimal(solution);
 
-        final BigDecimal actual = this.calculator.solve(expression);
-        assertEquals(expected, actual);
+        final String actual = this.calculator.solve(expression).stripTrailingZeros().toPlainString();
+        assertEquals(solution, actual);
     }
 
     @ParameterizedTest
@@ -67,5 +64,18 @@ public class CalcTest {
         assertThrows(FormatException.class, () -> {
             this.calculator.solve(expression);
         });
+    }
+
+    @ParameterizedTest
+    @CsvSource(value = {
+            "339/108=3.1388888889",
+            "22/7=3.1428571429",
+            "1/3=0.3333333333",
+            "2/3=0.6666666667" }, delimiter = '=')
+    public void irrationalNumberTest(final String expression, final String solution)
+            throws ParenthesisException, FormatException {
+
+        final String actual = this.calculator.solve(expression).stripTrailingZeros().toPlainString();
+        assertEquals(solution, actual);
     }
 }

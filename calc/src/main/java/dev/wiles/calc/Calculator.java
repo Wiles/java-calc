@@ -1,6 +1,7 @@
 package dev.wiles.calc;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import dev.wiles.calc.exceptions.FormatException;
 import dev.wiles.calc.exceptions.ParenthesisException;
@@ -42,7 +43,7 @@ public class Calculator {
                 left = left.multiply(this.primary(tokenizer));
                 token = tokenizer.get();
             } else if (token.getValue().equals("/")) {
-                left = left.divide(this.primary(tokenizer));
+                left = left.divide(this.primary(tokenizer), 10, RoundingMode.HALF_UP);
                 token = tokenizer.get();
             } else if (token.getValue().equals("(")) {
                 // Open parenthesis after a number is an implied multiplication IE. 2(10) = 20
