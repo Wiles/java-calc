@@ -6,10 +6,4 @@ public class EndToken implements Token {
     public Object getValue() {
         return "END";
     }
-
-    @Override
-    public String toString() {
-        return "END";
-    }
-
 }
