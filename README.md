@@ -1,6 +1,6 @@
 # java-calc
 
-[![codecov](https://codecov.io/gh/Wiles/java-calc/branch/master/graph/badge.svg)](https://codecov.io/gh/Wiles/java-calc)
+![Java CI](https://github.com/Wiles/java-calc/workflows/Java%20CI/badge.svg) [![codecov](https://codecov.io/gh/Wiles/java-calc/branch/master/graph/badge.svg)](https://codecov.io/gh/Wiles/java-calc)
 
 To refamiliarize myself with Java tools I decided to port my old [C++ infix notation parser](https://github.com/Wiles/win_calc/tree/master/calc_base/calc_base) to Java. Supports parenthesis, addition, subtraction, multiplication and division. Originally based on an excersice from Bjarne Stroustrup's *Programming: Principles and Practice Using C++*.
 
