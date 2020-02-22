@@ -4,10 +4,6 @@ public abstract class CalcException extends Exception {
 
     private static final long serialVersionUID = -8107448293843373621L;
 
-    public CalcException() {
-        super();
-    }
-
     public CalcException(final String message) {
         super(message);
     }

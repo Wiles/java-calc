@@ -27,7 +27,7 @@ public class Calculator {
             if (token.getValue().equals(")")) {
                 return left;
             } else {
-                throw new ParenthesisException();
+                throw new ParenthesisException("Unmatched parenthesis found.");
             }
         }
 
@@ -93,7 +93,7 @@ public class Calculator {
         final BigDecimal solution = this.expression(tokenizer);
 
         if (tokenizer.get().getValue().equals(")")) {
-            throw new ParenthesisException();
+            throw new ParenthesisException("Unmatch parenthesis found.");
         }
 
         return solution;
